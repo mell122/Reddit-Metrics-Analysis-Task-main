@@ -1,44 +1,26 @@
-import praw
+import matplotlib.pyplot as plt
+import seaborn as sns
 import pandas as pd
 
-# Set up Reddit API credentials
-reddit = praw.Reddit(client_id='_1puKAM7Cs6wEl8H1o-Oqg',
-                     client_secret='_9xtMfzYdUuwTWJ0MqRA5SXj2PBxQQ',
-                     user_agent='personal use script')
 
-# Specify subreddit and time period
-subreddits = ['emacs', 'vim']
-time_period = ('01/2023', '03/2023')
+# Load Emacs data from the parent directory/data
+emacs_data = pd.read_csv('../data/emacs_posts.csv')
 
-# Function to scrape posts and extract metrics
-def scrape_subreddit(subreddit_name):
-    subreddit = reddit.subreddit(subreddit_name)
-    posts_data = []
-    
-    for submission in subreddit.submissions(start=time_period[0], end=time_period[1]):
-        # Choose 5 metrics to extract (e.g., title length, upvotes, comments count, etc.)
-        post_metrics = {
-            'id': submission.id,
-            'title_length': len(submission.title),
-            'upvotes': submission.score,
-            'num_comments': submission.num_comments,
-            'created_utc': submission.created_utc,
-            'author': submission.author.name
-            # Add more metrics as needed
-        }
-        
-        posts_data.append(post_metrics)
-    
-    return posts_data
+# Load Vim data from the parent directory/data
+vim_data = pd.read_csv('../data/vim_posts.csv')
 
-# Scrape data for each subreddit
-subreddit_data = {}
-for subreddit_name in subreddits:
-    subreddit_data[subreddit_name] = scrape_subreddit(subreddit_name)
 
-# Convert data to Pandas DataFrame
-dfs = {subreddit: pd.DataFrame(data) for subreddit, data in subreddit_data.items()}
+# Plotting metrics
+sns.boxplot(x='subreddit', y='score', data=pd.concat([emacs_data.assign(subreddit='emacs'), vim_data.assign(subreddit='vim')]))
+plt.title('Distribution of Scores')
+plt.show()
 
-# Save data to CSV files
-for subreddit, df in dfs.items():
-    df.to_csv(f'{subreddit}_posts_data.csv', index=False)
+# Add more plots for other metrics
+
+# Additional analysis
+# You may want to compare the average scores, comment counts, etc., between the two subreddits using statistical tests.
+# Example:
+from scipy.stats import ttest_ind
+
+t_stat, p_value = ttest_ind(emacs_data['score'], vim_data['score'])
+print(f'T-test for scores: t-statistic={t_stat}, p-value={p_value}')
