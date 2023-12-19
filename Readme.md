@@ -82,3 +82,50 @@ Feel free to contribute to the project by submitting issues or pull requests.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+# Reddit API Date Limitation
+
+
+## Overview
+
+This document provides information regarding a crucial limitation associated with the Reddit API, which has been in effect since 2018. Users are advised to take note of the restrictions imposed on querying data based on specific dates.
+
+This document aims to inform you about a significant limitation associated with the Reddit API that has been in effect since 2018. Please be aware that precise dates are no longer supported when querying the Reddit API.
+
+
+
+## Impact on Data Queries
+
+This limitation may affect users accustomed to querying the API for data with precise date requirements. It is advisable to adjust any existing processes or applications that rely on specific date queries to align with the revised timeframe constraints imposed by the Reddit API.
+
+## Recommended Approach
+
+To obtain the required information, it is recommended to utilize date ranges within the last three months when interacting with the Reddit API.
+
+## Support and Assistance
+
+For any queries or concerns related to this limitation, please feel free to reach out to the Reddit API support team for further assistance.
+
+Thank you for your attention to this matter, and we appreciate your understanding as we work within the constraints set by the Reddit API.
+
+*Note: Last three months should be used to obtain the needed information.*
+
+
+
+## Date Limitation Details
+
+Since 2018, the Reddit API no longer supports the retrieval of data with precise dates. Instead, users can only query data within a time frame ranging from the last month to the last three months. This limitation means that it is not possible to obtain information based on an exact date beyond this specified window.
+
+## Implications
+
+Users who rely on the Reddit API for querying data with specific date requirements should be aware of this limitation. Any existing processes or applications that depend on exact date queries should be adjusted to align with the revised timeframe constraints.
+
+## Contact
+
+For any inquiries or concerns related to this limitation, please reach out to the Reddit API support team for further assistance.
+
+## Acknowledgment
+
+We appreciate your understanding as we navigate and work within the constraints set by the Reddit API.
+
+
