@@ -131,7 +131,7 @@ We appreciate your understanding as we navigate and work within the constraints 
 
 # Next Step of the project 
 
-## 1.Dockerization and Containerization
+## Dockerization and Containerization
 
 This document outlines the steps to Dockerize and containerize the project for easier deployment and scalability.
 
@@ -153,18 +153,3 @@ Dockerizing the project involves encapsulating the application and its dependenc
 
 
 
-## 2.Testing with ngrok and Webhooks
-
-Configuring Webhooks
-Update Webhook URL:
-If your application uses webhooks, update the webhook URL to the ngrok URL obtained in the previous step. For example, if you have a webhook endpoint like https://your-webhook-endpoint.com, update it to https://your-ngrok-subdomain.ngrok.io.
-
-Test Webhooks:
-Trigger the events that should invoke your webhooks and verify that your local server receives the webhook payloads. You can use services like RequestBin to inspect incoming webhook payloads.
-
-Cleanup:
-Stop ngrok when testing is complete by pressing Ctrl + C in the terminal where ngrok is running.
-
-Note:
-Ensure your ngrok URL is updated whenever you restart ngrok or your ngrok session expires.
-Exercise caution with sensitive information during testing, and consider using ngrok's authentication features for added security.
