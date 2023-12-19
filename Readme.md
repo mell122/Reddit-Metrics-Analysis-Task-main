@@ -151,16 +151,3 @@ This document outlines the steps to Dockerize and containerize the project for e
 
 Dockerizing the project involves encapsulating the application and its dependencies into a Docker container, making it portable and easily deployable across different environments. This step enhances scalability, reproducibility, and simplifies deployment processes.
 
-## Prerequisites
-
-Ensure you have the following prerequisites installed on your machine:
-
-- Docker: [Install Docker](https://www.docker.com/get-started)
-
-## Getting Started
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/yourproject.git
-   cd yourproject
