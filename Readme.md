@@ -151,5 +151,14 @@ This document outlines the steps to Dockerize and containerize the project for e
 
 Dockerizing the project involves encapsulating the application and its dependencies into a Docker container, making it portable and easily deployable across different environments. This step enhances scalability, reproducibility, and simplifies deployment processes.
 
+## Test Descriptions
 
+Test get_top_posts Function:
+
+Mocks the PRAW Reddit instance to simulate Reddit API calls.
+Calls the function with a mock subreddit and checks if the returned posts contain expected metrics.
+Test generate_csv Function:
+
+Creates a sample post for testing.
+Calls the function with the sample post and checks if the CSV file is generated at the expected path.
 
