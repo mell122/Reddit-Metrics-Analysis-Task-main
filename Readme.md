@@ -9,7 +9,7 @@ This project focuses on understanding the productivity of contributors on reddit
 ### 1. Scrape Reddit Posts
 
 - **Subreddits:** "r/emacs" and "r/vim"
-- **Time Period:** January 2023 to March 2023
+- **Time Period:** Last Three months
 
 ### 2. Extract Metrics
 
@@ -39,8 +39,8 @@ A CSV file is generated with one line per post, containing an identifier and the
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
+    git clone https://github.com/mell122/Reddit-Metrics-Analysis-Task-main.git
+    cd Reddit-Metrics-Analysis-Task-main
     ```
 
 2. Install dependencies:
@@ -55,12 +55,16 @@ A CSV file is generated with one line per post, containing an identifier and the
    - Create a Reddit App as described in the [Getting Reddit API Credentials](#getting-reddit-api-credentials) section.
 
 2. **Update Credentials:**
-   - Replace `'your_client_id'`, `'your_client_secret'`, and `'your_user_agent'` in the code with your actual Reddit API credentials.
+   - Replace `'your_client_id'`, `'your_client_secret'`, and `'your_user_agent'` in the env File with your actual Reddit API credentials.
 
 3. **Run the Script:**
 
     ```bash
-    python main.py
+    # To run the scraping script and extracting csv
+    python scraper.py
+
+    # to analyze the csv data and get a plot
+    python analyze.py
     ```
 
 ## Getting Reddit API Credentials
